@@ -1,0 +1,137 @@
+@media (max-width: 768px) {
+    .container {
+        padding: 0 35px;
+    }
+    
+    #headermenu li {
+        padding-right: 82px;   
+    }
+    .pro-full-img {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    #product-sng-infos {
+        margin-left: 5px !important;
+    }
+    
+    .fixed-sort-props {
+    width: 100%;
+    }
+    
+    #product-lists .sng-pg-post-sm {
+        
+        width: 48% !important;
+    
+    }
+    
+    .sng-pg-post-sm {
+        
+        width: 48% !important;
+        float: left;
+        min-width: 200px;
+    
+    }
+    
+    .home-post-sm {
+    width: 48%;
+        float: left;
+        margin-bottom: 25px;
+    }
+    
+    .two-post-section .home-post-sm {
+    width: 100%;
+    }
+    
+    
+        #product-lists . col-sm-9 {
+    padding: 0;
+    }
+    
+        #headermenu li {
+        padding-right: 45px;   
+    }
+}
+
+
+
+@media only screen and (max-width : 480px) {
+
+    #product-lists .sng-pg-post-sm {
+        
+        width: 48% !important;
+    
+    }
+    
+
+    
+    
+    .sng-pg-post-sm {
+        
+       /* width: 200px !important;*/
+        float: left;
+        min-width: 100px;
+        margin-top: 25px;
+    
+    }
+    
+    .sng-pg-post-sm h4{
+    height: auto;
+    }
+    
+    
+    #product-lists .col-sm-9 {
+    padding: 0;
+    }
+    
+    
+}
+
+
+@media only screen and (max-width : 320px) { 
+    
+ .home-post-sm {
+ width: 100%;
+ }
+    
+    
+        #product-lists .col-sm-9 {
+    padding: 0;
+    }
+}
+
+
+@media only screen and (max-width : 992px) {
+
+    
+        #headermenu li {
+        padding-right: 45px;   
+    }
+    
+    .featured-post-1 {
+    width: 100%;
+        margin-top: 40px;
+        height: auto
+    }
+    .featured-post-2 {
+    width: 100%;
+        height: auto;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+
+ #headermenu li {
+        padding-right: 82px;   
+    }
+}
+
+@media (min-width: 1200px) {
+
+
+ #headermenu li {
+        padding-right: 115px;   
+    }
+}

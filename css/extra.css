@@ -1,0 +1,27 @@
+/** Select Tag **/
+
+select {
+   
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   
+   height: 40px;
+   -webkit-appearance: none;
+   
+
+
+	  border: 0px solid #bbb;
+  border-radius: .1em;
+  box-shadow: 0 1px 0 2px rgba(0,0,0,.04);
+	  background: #F9F9F9; /* Old browsers */
+    /*
+	  
+    */
+    
+    content: '>'
+}
+
+
+    
