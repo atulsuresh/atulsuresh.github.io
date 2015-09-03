@@ -45,10 +45,38 @@
 overflow:hidden;
         }
 
+
+        .a{
+
+            font-weight: 800;
+           
+           
+        }
+
+        .s{
+
+            font-weight: 400;
+             font-style: italic;
+        }
+
         a:hover {
 
             text-decoration: none !important;
             border-bottom: dotted 1px;
+        }
+
+        @media (max-width: 992px) {
+            .text-links {
+
+                text-align: center !important;
+                margin-bottom: 10px;
+            }
+
+            .text-hello {
+                    text-align: center !important;
+
+            }
+
         }
     </style>
 
@@ -63,10 +91,10 @@ overflow:hidden;
     </head>
 
         <body>
-            <div class="row">
+            <div class="r1ow">
                 <div class="container">
                     <div class="row">
-                         <div class="text-right text-hello col-md-12"><h3>My name is Athul Suresh.</h3></div>
+                         <div class="text-right text-hello col-md-12"><h3>My name is <span class="as-branding a">athul</span><span class="as-branding s">suresh</span></h3></div>
                      </div>  
                     <div class="row">
                         <div class="text-links col-md-5">
