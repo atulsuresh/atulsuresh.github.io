@@ -121,6 +121,7 @@ h2 {
   width: 100%;
   overflow: hidden;
   background: #292a2e;
+  min-height: 90vh;
 }
 .video-container .poster img {
   width: 100%;
@@ -138,14 +139,14 @@ h2 {
   z-index: 1000;
   position: absolute;
   top: 40%;
-  width: 100%;
-  text-align: center;
+  width: 70%;
+  text-align: left;
   color: #fff;
 }
 
 .title-container {
   z-index: 1000;
-  position: absolute;
+  position: relative;
   top: 48%;
   width: 60%;
   text-align: left;
@@ -166,6 +167,7 @@ font-size: 43px;
 .description .inner {
 	margin-top: 20px;
 	color: #868686;
+  text-align: left
 }
 .description .inner .inner-bullet-text {
 	display: inline-block;
@@ -177,7 +179,7 @@ font-size: 43px;
 
 .video-container .description .inner {
   font-size: 1em;
-  width: 45%;
+  
   margin: 0 auto;
 }
 
@@ -709,4 +711,200 @@ margin-top: 50px;
     margin-bottom: 15px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+.vd-block {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 0;
+}
+
+.vd-block--large {
+  width: 1200px;
+}
+
+.vd-block--left {
+  left: -300px;
+  top: 50%;
+  margin-top: -300px;
+  transform: rotate(17deg);
+  -webkit-transform: rotate(17deg);
+}
+
+
+
+.vd-block--large.vd-block--left {
+    margin-top: -810px;
+    left: 50%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    opacity: 0.83;
+    margin-left: -1340px;
+    width: 2000px;
+}
+
+
+#homepage-block-left {
+    opacity: 1;
+    background: -moz-linear-gradient(45deg, white 0%, white 32%, rgba(255, 255, 255, 0.4) 100%);
+    background: -webkit-linear-gradient(45deg, white 0%, white 32%, rgba(255, 255, 255, 0.4) 100%);
+    background: linear-gradient(45deg, white 0%, white 32%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+
+
+
+
+
+
+
+
+.video__homepage {
+  background: url(../../../assets/video/video-fallback.jpg) no-repeat 0 0;
+  background-size: cover;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity .35s ease-in;
+}
+
+.video__homepage.video {
+  transition-delay: .35s;
+}
+
+.video__homepage.video,
+.video__homepage.no-video {
+  opacity: 1;
+}
+
+.video__homepage.video {
+  background: none;
+}
+
+.video__homepage #video {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  transform: none;
+}
+
+.video__homepage .section__block__hero h1 {
+  font-size: 64px;
+  line-height: 70px;
+}
+
+.video__homepage .vertical__centering--hero {
+  z-index: 15;
+  position: relative;
+}
+
+.video__homepage.video #video {
+  display: block;
+}
+
+.video__homepage .hero__block h6 {
+  color: #666;
+  max-width: 330px;
+}
+
+.video__homepage .button--secondarycta {
+  color: #ef2b35;
+  border-color: #ef2b35;
+}
+.homepage-video a {
+  display: block;
+}
+
+.homepage-video img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+
+
+.block {
+  position: absolute;
+  width: 660px;
+  height: 600px;
+  top: 0;
+}
+.block--large {
+  height: 1200px;
+}
+.block--large.block--left {
+  margin-top: -810px;
+  left: 50%;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  opacity: 0.83;
+  margin-left: -1340px;
+  width: 2000px;
+}
+.block--large.block--right {
+  margin-top: -1010px;
+  right: -645px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  opacity: 0.77;
+}
+.block--left {
+  left: -300px;
+  top: 50%;
+  margin-top: -300px;
+  transform: rotate(17deg);
+  -webkit-transform: rotate(17deg);
+}
+.block--left.block--small {
+  left: -400px;
+  margin-top: -600px;
+}
+.block--right {
+  right: -300px;
+  top: 50%;
+  margin-top: -300px;
+  transform: rotate(27deg);
+  -webkit-transform: rotate(27deg);
+}
+.block--right.block--small {
+  right: -500px;
+  margin-top: -470px;
+  transform: rotate(27deg);
+  -webkit-transform: rotate(27deg);
+}
+.block--gray {
+  background-color: #FFF;
+}
+.block--red {
+  background-color: red;
+}
+
+#homepage-block-left {
+  opacity: 1;
+  background: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.9) 32%, rgba(0, 0, 0, 0.3) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.9) 32%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.9) 15%, rgba(0, 0, 0, 0.9) 32%, rgba(0, 0, 0, 0.3) 100%);
+}
+
 
