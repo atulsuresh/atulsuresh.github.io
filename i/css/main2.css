@@ -1086,6 +1086,8 @@ margin-top: 50px;
 
 .hero-content__content h1  {
   color:#fff;
+  letter-spacing: 4px;
+  
 }
 
 
@@ -1143,15 +1145,30 @@ margin-top: 50px;
   right: 0;
   
 }
+
+
+.carousel-overlay .text-area--main-text {
+
+  bottom: -10px;
+  position: absolute;
+  bottom: 0;
+  margin: 40px 50px;
+
+}
+
+.carousel-overlay .text-area--main-text small {
+  color: rgba(255,255,255,0.8)
+}
+.carousel-overlay .text-area--main-text h5 {
+  margin-top: 1rem;
+  color: #fff
+}
 .carousel-overlay h3 {
   font-size: 2.6rem;
   color: #fff;
   text-shadow:-1px 1px 1px rgba(0,0,0,0.5);
   font-weight: 800;
-  bottom: -10px;
-  position: absolute;
-  bottom: 0;
-  margin: 40px 50px;
+  
 }
 
 
