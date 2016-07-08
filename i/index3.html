@@ -39,11 +39,16 @@
 
             <div class="menu-col">
               <ul id="out-nav" class="out-nav">
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">JOIN US</a></li>
+                <li><a href="#" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LOCATIONS</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li><a href="#">PLANS AND PRICING</a></li>
                 <li><a href="#">GALLERY</a></li>
-                <li><a href="#">VIRTUAL TOUR</a></li>
-                <li><a href="#">BLOG</a></li>
+                <li class="top-nav__my-account"><a href="#">MY ACCOUNT</a></li>
               </ul>
             </div>
           </div>
@@ -56,7 +61,9 @@
             <source src="img/mw1.mp4" type='video/mp4' />
         </video>
 
-        <div id="homepage-block-left" class="block block--gray block--large block--left"></div>
+        <!--<div id="homepage-block-left" class="block block--gray block--large block--left"></div>-->
+
+          <div class="homepage--black-overlay"></div>
         
 
             <div class="container">
@@ -79,12 +86,12 @@
                   <div class="landing--take-a-tour">
                     <div class="landing--take-a-tour--wrapper btn-1b">
                       <a href="#">
-                        Apply for a tour <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        Get Started <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                       </a>
                     </div>
                   </div>
 
-
+                  <!--
                   <div class="landing--pricing">
                     <div class="landing--pricing--wrapper">
                       <a href="#">
@@ -92,6 +99,9 @@
                       </a>
                     </div>
                   </div>
+
+                  -->
+
 
 
                 </div>
@@ -121,7 +131,9 @@
                     </span>
                     <span class="plan-text">Access to events, benefits, and our digital app, which lets you connect with over 50,000 members across the globe. Includes 2 credits for booking space in Hot Desk locations every month and the ability to buy more as needed.</span>
 
-                    <span class="plan-more"
+                    <span class="plan__block--plan-buy"><span>APPLY NOW</span></span>
+
+
                   </a>
 
 
@@ -455,6 +467,7 @@
 
     <script type="text/javascript">
 
+/*
       $('.one-time').slick({
         dots: true,
         infinite: true,
@@ -462,6 +475,23 @@
         slidesToShow: 1,
         adaptiveHeight: true
       });
+*/
+
+
+
+
+    $(document).ready(function(){
+      $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+          $(".headbar").addClass("nav-scrolled"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+          console.log("scrolled");
+        } else {
+          $(".headbar").removeClass("nav-scrolled"); // if not, change it back to transparent
+        }
+      });
+    });
+
+
   
     </script>
 
