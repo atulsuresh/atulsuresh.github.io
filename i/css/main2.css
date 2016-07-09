@@ -1516,6 +1516,33 @@ margin-top: 50px;
   padding: 6px 8px;
   font-size: 14px;
   border-radius: 2px;
-  margin: 8px 12px 0 0;
+  margin: 8px 10px 0 0;
   display: inline-block;
+}
+
+
+.single--gallery__entry {
+  padding-left: 0.1rem;
+  padding-right: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+
+
+.campus-review .review-text {
+  font-size: 0.9rem;
+  margin-top:1rem;
+  padding-bottom: 3.5rem;
+}
+
+
+
+.campus-review .review {
+  padding-top: 1.5rem;
+  margin-top: 0;
+
+}
+
+.campus-review .media-photo-badge img {
+  border-radius: 50%;
+  margin-bottom: 1rem;
 }
