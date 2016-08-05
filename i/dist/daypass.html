@@ -1,0 +1,359 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+  </head>
+
+  <body class="main-dashbaord">
+    <div class="row">
+        <div class="large-12 columns nav-top">
+            <div class="top-bar">
+  <div class="top-bar-title">
+    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+      <button class="menu-icon dark" type="button" data-toggle></button>
+    </span>
+    <div class="logo"></div>
+  </div>
+  <div id="responsive-menu">
+    
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li class="credits" >Credits: 1 Left</li>
+        <!-- <li><input class="search-bar" type="search" placeholder="Search"></li> -->
+        <li><div class="pro_pic">H</div></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+        </div>
+    </div> 
+
+    
+    
+    
+    <div class="row top-margin-30px dashbord-menu" >
+    
+    	<div class="large-12 columns ">
+    		<ul class="menu simple with-border-bottom">
+    			  <li><a href="#">Dashboard</a></li>
+    			  <li><a href="meeting.html">Book Meeting Room</a></li>
+    			  <li>Buy Day Pass</li>
+    			  <li><a href="#">Settings</a></li>
+    		</ul>
+    	</div>
+    
+    
+    
+    
+    
+    </div>
+    
+    <div ng-app="Innov8App">
+    
+    	<div class="row product-main-wrapper" ng-controller="DayPassCtrl">
+    
+    		<script type="text/ng-template" id="DayPassBookingModel.html">
+    
+    			<section class="meetingRoom-Model booking-Model">
+    				<h6 class="Model-name">Day Pass Booking</h6>
+    
+    				<div ng-if="!bookedDayPass">
+    					<div id="loadedSpinner"  us-spinner class="loading-cover" ng-class="{'loading-cover-open':transactionLoader}"></div>
+    
+    					<div class="row bookingDetail">
+    			    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">DATE</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedDateRaw.format("D MMMM YYYY")}]}</span></span>
+    			    			</div>
+    			    		</div>
+    			    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">OPENING TIME</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedTimeRaw.format("hh:mm a")}]}</span></span>
+    			    			</div>
+    			    		</div>
+    			    		<div class="medium-4 columns">
+    				    		<div class="modelDetails">
+    				    				<span class="modelDetails--headline">CLOSE TIME</span>
+    				    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedTimeRaw.format("hh:mm a")}]}</span></span>
+    				    			</div>
+    				    		</div>
+    			    	</div>
+    
+    
+    
+    
+    
+    			    	<div class="row revel--details">
+    			    		<div class="small-3 columns"></div>
+    			    		<div class="small-9 columns">
+    			    			<span class="detail-name">{[{revelData.location.description}]}</span>
+    			    			<span class="detail-description">{[{revelData.location.city}]}</span>
+    			    			<ul class="unstyled detail-moreinfo-list">
+    			    				
+    
+    			    				<li><span class="detail-moreinfo-list--headline detail-moreinfo-list--headline--block-border-btm">AMENITIES</span>
+    			    				<ul class="detail-moreinfo-list--am-list unstyled">
+    			    					<li>WIFI</li>
+    			    					<li>Free Coffee</li>
+    			    					<li>Terrace Acesss</li>
+    			    				</ul>
+    			    				<li><span class="detail-moreinfo-list--headline">SEATS LEFT : </span><span class="detail-moreinfo-list--text">{[{revelData.seatsLeft}]}</span></li>
+    
+    
+    			    				</li>
+    
+    
+    			    			</ul>
+    			    		</div>
+    
+    			    	</div>
+    
+    
+    
+    
+    
+    
+    
+    				
+    
+    
+    					<div class="row">
+    				    		<div class="booking-info">
+    					    		<span class="booking-cost"><span class="booking-cost-headline">BOOKING COST : </span> ₹{[{revelData.totalPrice}]}/day
+    					    		<span class="booking-cost-addn-info">You may modify or cancel this reservation until 60 minutes before the start of the reservation.</span>
+    				    		</div>
+    				    	</div>
+    
+    
+    
+    
+    					<button class="button innov8-button top-margin-30px" ng-click="dayPassDoCheckout(revelData.id,selectedDate)">PAY NOW</button>
+    
+    				</div>
+    			    
+    
+    
+    				<div ng-if="bookedDayPass" class="booking-confirm">
+    					
+    					<div  id="loadedSpinner" us-spinner class="loading-cover" ng-class="{'loading-cover-open':transactionLoader}"></div>
+    
+    					<h3 class="booking-confirm-sucess"><i class="fa fa-check" aria-hidden="true"></i>Booking Confirmed</h3>
+    
+    					<p class="booking-text">Check in procedure for members (or if this is not your home location): Please bring a valid photo ID and check in at Innov8 reception upon arriving at the building. Youll be issued a temporary access card in exchange for your photo ID. If you have guests joining you, you must register them prior to your reservation.</p>
+    
+    
+    					<div class="row revel--details">
+    			    		<div class="small-3 columns"></div>
+    			    		<div class="small-9 columns">
+    			    			<span class="detail-name">{[{revelData.location.description}]}</span>
+    			    			<span class="detail-description">{[{revelData.location.city}]}</span>
+    			    			<ul class="unstyled detail-moreinfo-list">
+    			    				
+    
+    			    				<li><span class="detail-moreinfo-list--headline detail-moreinfo-list--headline--block-border-btm">AMENITIES</span>
+    			    				<ul class="detail-moreinfo-list--am-list unstyled">
+    			    					<li>WIFI</li>
+    			    					<li>Free Coffee</li>
+    			    					<li>Terrace Acesss</li>
+    			    				</ul>
+    			    				<li><span class="detail-moreinfo-list--headline">SEATS LEFT : </span><span class="detail-moreinfo-list--text">{[{revelData.seatsLeft}]}</span></li>
+    
+    
+    			    				</li>
+    
+    
+    			    			</ul>
+    			    		</div>
+    
+    			    	</div>
+    
+    
+    			    	<div class="row bookingDetail">
+    			    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">DATE</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedDateRaw.format("D MMMM YYYY")}]}</span></span>
+    			    			</div>
+    			    		</div>
+    			    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">OPENING TIME</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedTimeRaw.format("hh:mm a")}]}</span></span>
+    			    			</div>
+    			    		</div>
+    			    		<div class="medium-4 columns">
+    				    		<div class="modelDetails">
+    				    				<span class="modelDetails--headline">CLOSE TIME</span>
+    				    				<span class="modelDetails--detail"><span class="detail-text">{[{revelData.selectedTimeRaw.format("hh:mm a")}]}</span></span>
+    				    			</div>
+    				    		</div>
+    
+    				    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">BOOKING ID</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">WW23JJE</span></span>
+    			    			</div>
+    			    		</div>
+    
+    
+    
+    			    		<div class="medium-4 columns">
+    			    			<div class="modelDetails">
+    			    				<span class="modelDetails--headline">FIRST NAME</span>
+    			    				<span class="modelDetails--detail"><span class="detail-text">Athul Suresh</span></span>
+    			    			</div>
+    			    		</div>
+    
+    
+    			    	</div>
+    
+    
+    			    	<div class="row top-margin-30px">
+    						<button class="button innov8-button--black" ng-click="closeModel()">
+    						      CLOSE
+    						    </button>
+    					</div>
+    
+    
+    
+    
+    
+    					
+    
+    				</div>
+    			</section>
+    		    
+    		</script>
+    				<script type="text/ng-template" id="angularCalendar.html">
+    
+    				
+    				<div class="header">
+    				    <i class="fa fa-angle-left" ng-click="previous()"></i>
+    				    <span>{[{month.format("MMMM, YYYY")}]}</span>
+    				    <i class="fa fa-angle-right" ng-click="next()"></i>
+    				</div>
+    				<div class="week names">
+    				    <span class="day">Sun</span>
+    				    <span class="day">Mon</span>
+    				    <span class="day">Tue</span>
+    				    <span class="day">Wed</span>
+    				    <span class="day">Thu</span>
+    				    <span class="day">Fri</span>
+    				    <span class="day">Sat</span>
+    				</div>
+    				<div class="week" ng-repeat="week in weeks">
+    				    <span class="day" ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selectedCalenderDate), 'blockedDate': day.dayLasted }" ng-click="select(day)" ng-repeat="day in week.days">{[{day.number}]}</span>
+    				</div>
+    
+    		</script>
+    
+    
+    		<div class="medium-4 columns">
+    			<calendar selected-calender-date="selectedDate" selected-location="" refresh-data="globalMeetingRoomDataRefresh()"></calendar>
+    		</div>
+    
+    
+    		<div class="medium-8 columns">
+    
+    			<section class="location-selection">
+    				<!--<h3>{[{selectedDate.format("YYYY-MM-DD")}]}</h3>-->
+    
+    				<label>
+    					<div class="control-lable">Locations</div>
+    					<select class="location-dropdown" name="location" ng-model="selectedLocation" ng-options="loc as loc.name for loc in locationList track by loc.name" ng-change="globalDayPassDataRefresh()"><option value="" class="">Select Location</option></select>
+    				</label>
+    
+    
+    			</section>
+    
+    
+    
+    			<section class="daypass-container">
+    				<div class="daypass-wrapper ">
+    
+    					<div class="loading-cover" us-spinner ng-class="{'loading-cover-open':!dataLoaded}"></div>
+    
+    					<ul class="unstyled dayPass-List row ng-clock">
+    						<li class="medium-5 columns daypass-single repeated-item"  ng-repeat="dayPass in dayPassList track by dayPass.id">
+    
+    							<h4 class="daypass-center-name ">{[{dayPass.location.description}]} - {[{dayPass.location.city}]}</h4>
+    
+    							<span class="daypass-center-image">
+    								<img src="https://placeholdit.imgix.net/~text?txtsize=88&txt=350%C3%97350&w=550&h=250" />
+    							</span>
+    
+    							<div class="row daypass-cetner-moreinfo">
+    								<!--
+    								<div class="medium-4 columns moreinfo-headline">ADDRESS</div>
+    								<div class="medium-8 columns moreinfo-text">{[{dayPass.location.address}]}</div>
+    							-->
+    								<div class="small-12 columns">
+    									<div class="modelDetails">
+    					    				<span class="modelDetails--headline">ADDRESS</span>
+    					    				<span class="modelDetails--detail"><span class="detail-text">{[{dayPass.location.address}]}</span></span>
+    					    			</div>
+    					    		</div>
+    
+    							</div>
+    
+    
+    							<div class="row daypass-cetner-moreinfo">
+    
+    								<div class="small-6 columns">
+    									<div class="modelDetails">
+    					    				<span class="modelDetails--headline">SEATS LEFT</span>
+    					    				<span class="modelDetails--detail"><span class="detail-text">{[{dayPass.seatsLeft}]}</span></span>
+    					    			</div>
+    					    		</div>
+    
+    					    		<div class="small-6 columns">
+    									<div class="modelDetails">
+    					    				<span class="modelDetails--headline">COST</span>
+    					    				<span class="modelDetails--detail"><span class="detail-text">{[{dayPass.totalPrice}]}</span></span>
+    					    			</div>
+    					    		</div>
+    
+    
+    							</div>
+    
+    							
+    
+    								
+    
+    							
+    
+    							<button class="button innov8-button innov8-button-full" ng-click="openDayPassRevel(dayPass,selectedDate)">BOOK NOW</button>
+    						</li>
+    					</ul>
+    				</div>
+    			</section>
+    
+    		</div>
+    
+    
+    
+    
+    	</div>
+    	
+    </div>
+    
+    
+    
+
+    <script src="assets/js/app.js"></script>
+
+  </body>
+</html>
