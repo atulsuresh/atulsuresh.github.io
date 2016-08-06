@@ -181,12 +181,13 @@
 
 .grid__item * {
   z-index: 10;
+  font-size: 0.89rem;
 }
 
 /* grid item element and full content element styles */
 .title {
   margin: 0;
-  font-size: 1.475em;
+  font-size: 1.275em;
   
   text-align: center;
   color:#000;
@@ -202,6 +203,7 @@
   -webkit-justify-content: center;
   justify-content: center;
   width: 100%;
+  font-size: 1.2rem;
 }
 
 .loader {

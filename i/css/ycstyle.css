@@ -1,0 +1,162 @@
+.yc-hero-container--white {
+	min-height:100vh;
+	padding-top: 150px;
+	background-color: #fff;
+}
+
+.yc-hero-container {
+	min-height:100vh;
+	padding-top: 150px;
+	background-color: #292a2e;
+}
+
+.hero-logo {
+	margin-bottom: 5rem;
+}
+
+.hero-text {
+	text-align: center;
+
+}
+.yc-hero-container--white .hero-text h1 {
+color: #292a2e;
+}
+
+.yc-hero-container--white .hero-text h4 {
+color: #292a2e;
+}
+
+.hero-text h1 {
+	
+	color: #fff;
+	margin-bottom: 2rem;
+}
+
+
+.hero-text h3 {
+	color: #e2e2e2;
+	
+	margin-bottom: 3.4rem;
+	font-size: 1.35rem;
+}
+
+
+
+.hero-text h4 {
+	color: #e2e2e2;
+	
+	margin-bottom: 3.4rem;
+	font-size: 1rem;
+}
+
+
+.yc-innov8-button {
+	    color: #fff;
+	    cursor: pointer;
+	    text-decoration: none;
+	    padding: 10px 25px;
+	    border: solid 2px #e64444;
+	    background:#e64444;
+	    font-weight:600;
+
+	    
+
+	    
+}
+
+.yc-innov8-button-smallpad {
+	padding: 5px 25px;
+}
+
+.yc-innov8-button:hover {
+	    	    color: #fff;
+    			background-color: #e64444;
+	    }
+
+
+.innov8-button-tans {
+	background-color: transparent;
+}
+
+.ycPage .section-2 {
+	
+	padding: 200px 0 100px;
+	letter-spacing: 1
+
+}
+
+
+.ycPage .section-2 h6 {
+	font-size: 1.87rem;
+	margin-bottom: 2.5rem;
+	font-weight: 600;
+	line-height: 1.2
+}
+
+.section-2-sec2 {
+	margin-top: 4rem;
+}
+
+.ycPage .section-2 .s-headline {
+	font-size: 0.8rem;
+	font-weight: 600;
+	color:#e64444;
+	display: block;
+	margin-bottom: 1rem;	
+}
+
+.ycPage .section-2 .s-text {
+	font-size: 1.6rem;
+	margin-bottom: 2.2rem;
+	display: block;
+	font-weight: 600;
+}
+
+
+.ycPage .section-2 .sec2-when-list {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+
+
+.ycPage .form-section {
+	background-color: #f6f6ef;
+	padding-top: 100px;
+}
+.ycFrom {
+
+}
+
+
+.ycFrom .form-subtitle {
+	color:#e64444;
+	font-weight: 600;
+	text-align: right;
+	margin-right: 30px;
+}
+
+.ycFrom .has-error {
+	color: red;
+}
+
+
+input[type='text'], input[type='number']  {
+    width: 50%;
+}
+
+input[type='url'], input[type='email'] {
+    width: 80%;
+    margin: 0 0 .6rem 0;
+}	
+
+textarea {
+	overflow: hidden;
+    word-wrap: break-word;
+    resize: horizontal;
+    height: 100px;
+}
+
+select {
+	width:38% !important;
+}

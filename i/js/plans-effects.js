@@ -1,13 +1,54 @@
-/**
- * plans-effects.js 
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2015, Codrops
- * http://www.codrops.com
- */
+/**********************************************************************/
+/***                     Innov8 Coworking                           ***/
+/***                                                                ***/
+/***        We're Looking out for people who work like this.        ***/
+/***                 #awesomepeople #hustlers                       ***/
+/***                                                                ***/
+/**********************************************************************/
+
+
+function hire() {
+
+ 	var new android_Dev();
+ 	var new iOS_Dev();
+
+ 	if(android_Dev() == Kickass)
+ 	{
+ 		applynow();
+ 	}
+
+ 	else if(iOS_Dev() == Kickass)
+	{
+	 	applynow();
+	}
+
+	else
+	{
+		if(you==awessome)
+			contactus();
+
+		else
+			//Do Nothing
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (function() {
 
 	var bodyEl = document.body,
