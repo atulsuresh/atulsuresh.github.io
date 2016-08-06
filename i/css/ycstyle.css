@@ -134,6 +134,7 @@ color: #292a2e;
 	font-weight: 600;
 	text-align: right;
 	margin-right: 30px;
+	    margin-bottom: 30px;
 }
 
 .ycFrom .has-error {
@@ -159,4 +160,15 @@ textarea {
 
 select {
 	width:38% !important;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .yc-hero-container {
+        padding-top: 80px;
+    }
+
+    .page-container--body {
+    	padding: 200px 1rem 100px !important;
+    }
 }
