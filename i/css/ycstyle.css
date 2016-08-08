@@ -7,8 +7,18 @@
 .yc-hero-container {
 	min-height:100vh;
 	padding-top: 150px;
-	background-color: #292a2e;
+	/*background-color: #292a2e;*/
+	background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(../img/bg3.JPG);
+	background-size: cover;
 }
+
+
+.ycPage .container {
+	width:980px;
+}
+
+
+
 
 .hero-logo {
 	margin-bottom: 5rem;
@@ -16,9 +26,14 @@
 
 .hero-text {
 	text-align: center;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.5);
 
 }
 .yc-hero-container--white .hero-text h1 {
+color: #292a2e;
+}
+
+.yc-hero-container--white .hero-text h3 {
 color: #292a2e;
 }
 
@@ -64,6 +79,68 @@ color: #292a2e;
 	    
 }
 
+
+.section-talks {
+	/*background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.71)), url(../img/yc-talk-wide-2.png);*/
+
+}
+
+.section-firechat {
+	margin-top: 5rem;
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.71)), url(../img/yc-talk-wide-2.png);
+}
+
+.section-img-bar {
+	height:400px;
+	
+	background-size:cover;
+
+
+}
+
+
+.section-img-bar-text {
+	color:#fff;
+	margin-top: 8rem;
+	text-align: center;
+}
+
+.section-img-bar-text .bar-img-headline {
+	font-size: 2.5rem;
+	background-color: #e64444;
+	padding: 1rem 2rem;
+
+}
+
+.headline {
+	color:#e64444;
+	margin: 3rem 0 5rem;
+	font-size: 3rem;
+	padding-bottom:1rem;
+	border-bottom: 5px solid #e64444;
+}
+
+
+
+
+.section-speakers {
+
+
+}
+
+.section-speakers .speaker-detail {
+	
+	margin-bottom: 2rem;
+}
+
+.section-speakers .speaker-detail .detail  {
+	padding:1rem;
+	height:300px;
+
+	background-color: #ccc;
+}
+
+
 .yc-innov8-button-smallpad {
 	padding: 5px 25px;
 }
@@ -80,14 +157,14 @@ color: #292a2e;
 
 .ycPage .section-2 {
 	
-	padding: 200px 0 100px;
+	padding: 150px 0 100px;
 	letter-spacing: 1
 
 }
 
 
 .ycPage .section-2 h6 {
-	font-size: 1.87rem;
+	font-size: 2.7rem;
 	margin-bottom: 2.5rem;
 	font-weight: 600;
 	line-height: 1.2
@@ -103,6 +180,11 @@ color: #292a2e;
 	color:#e64444;
 	display: block;
 	margin-bottom: 1rem;	
+}
+
+.small-text {
+	display: block;
+	margin-top: 1rem;
 }
 
 .ycPage .section-2 .s-text {
@@ -127,6 +209,8 @@ color: #292a2e;
 .ycFrom {
 
 }
+
+
 
 
 .ycFrom .form-subtitle {
@@ -160,6 +244,94 @@ textarea {
 
 select {
 	width:38% !important;
+}
+.section-location-list {
+	height:300px;
+	padding: 100px;
+	text-align: center;
+	color: #fff;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.4);
+}
+
+.section-location-list .list-location {
+	display: block;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+
+}
+
+
+.section-location-list .list-time {
+	font-size: 1.1rem;
+}
+
+
+.section-location-list--delhi {
+	background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://cdn-images-1.medium.com/max/800/0*T8-FGMUity1o8yh8.jpg);
+	background-size: cover;
+}
+
+.section-location-list--bangalore {
+	background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(http://blog.gyanlab.com/wp-content/uploads/2015/11/Credits-Young-Indian-Website.jpg);
+	background-size: cover;
+}
+
+
+
+.section-location-list--bangalore {
+
+} 
+.section-schedule .loc-date {
+	
+	margin-bottom: 2rem;
+	padding-bottom: 0.5rem;
+}
+
+.section-schedule .loc-date-end {
+	
+}
+
+ .schedule-list {
+ 	margin-bottom: 4rem;
+ 	margin-top: 6rem;
+}
+
+.schedule-date {
+	
+	font-size:1.62rem;
+	display: inline-block;
+	margin-right: 1.5rem;
+}
+.schedule-list .schedule-name {
+	margin-top: 2.5rem;
+	font-weight: 600;
+	margin-bottom: 0.4rem;
+	color:#e64444;
+}
+
+.schedule-list .schedule-time {
+	font-size: 0.9rem;
+	display: block;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.schedule-list .schedule-text {
+	display: block;
+	margin-bottom: 1rem;
+}
+
+.schedule-date-location .fa {
+	margin-right: 0.4rem;
+}
+
+
+
+
+.schedule-list .schedule-list--image img {
+	/*max-width: 474px;*/
+	border-radius: 10px;
+	
 }
 
 
