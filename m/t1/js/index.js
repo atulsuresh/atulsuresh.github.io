@@ -2,12 +2,12 @@ var getRandomInt = function(min, max) {return Math.floor(Math.random() * (max - 
 var getRandomFloat = function(min, max) {return (Math.random() * (min - max) + max).toFixed(2);}
 
 // Centrifugo instance address
-var url = "http://frizzonchat.herokuapp.com/connection";
+var url = "https://damp-wildwood-28280.herokuapp.com/connection";
 
 // project secret, note that you MUST NEVER reveal project secret key in production
 // this is just a pure javascript demo where we generate connection token on client 
 // side
-var secret = "ffbdcbd6ad143a4aead0def01c5aa086f0e8af69aac54176133504e928df929a";
+var secret = "f239dj29rh3444hhhifif94rrr";
 
 // generate random user ID - in real life scenario this will be your application
 // user ID
