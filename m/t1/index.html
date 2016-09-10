@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Centrifugo real-time messaging simple demo chat</title>
+    
+    
+    
+    
+        <link rel="stylesheet" href="css/style.css">
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <p style="margin: 0 auto; max-width: 400px; margin-bottom: 10px;">
+    Demo chat using <a target="_blank"  href="https://github.com/centrifugal/centrifugo">Centrifugo server</a> and javascript client for it. <span class="help">Open several browser tabs to see it in action. Layout inspired by <a href="http://tympanus.net/Development/CreativeGooeyEffects/" target="_blank">Lucas Bebber's work</a></span>
+</p>
+<div class="content">
+    <div class="chat-window">
+        <div class="chat-messages" style="height: 406px;">
+            <ol class="chat-messages-list">
+            </ol>
+        </div>
+        <div class="chat-input-bar">
+            <div class="chat-info-container">
+                
+            </div>
+            <div class="chat-effect-container" style="-webkit-filter: none; filter: none;">
+                <div class="chat-effect-bar"></div>
+            </div>
+            <div class="chat-input-wrapper">
+                <button class="chat-input-tool">
+                    <i class="icon icon-camera"></i>
+                </button>
+                <div class="chat-input" contenteditable=""></div>
+                <button class="chat-send">
+                    <i class="fa fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://rawgit.com/Caligatio/jsSHA/master/src/sha256.js'></script>
+<script src='https://cdn.jsdelivr.net/sockjs/1.0/sockjs.min.js'></script>
+<script src='https://rawgit.com/centrifugal/centrifuge-js/master/centrifuge.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
