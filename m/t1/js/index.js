@@ -299,7 +299,7 @@ var subscribe = function() {
     var channelname = 'akanathul';
     subscription = centrifuge.subscribe('akanathul', function(message) {
         if (message.data && centrifuge.getClientId() !== message["client"]) {
-            receiveMessage(message.data["input"], (message.info.user === user)?'self':'friend');
+            receiveMessage(message.data["input"]);
         }
     });
 
