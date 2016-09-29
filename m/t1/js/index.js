@@ -278,6 +278,11 @@ var centrifuge = new Centrifuge({
 
 var subscription;
 
+
+var postMsgToApi = function(msg) {
+
+}
+
 var postMessage = function() {
     if (centrifuge.isConnected() === false) {
       return;
@@ -291,8 +296,25 @@ var postMessage = function() {
       "nick": "anonymous",
       "input": text
     }
-    subscription.publish(data);
-    newMessage(text);  
+    //subscription.publish(data);
+
+    $.ajax({
+      url:"http://frizzon.herokuapp.com/api/trip/18/",
+      type:"POST",
+      beforeSend: function(xhr){
+                xhr.setRequestHeader("Content-Type","application/json");
+                xhr.setRequestHeader("Authorization","Token 8529bbbc483668b2c164cc66d18d7d9d08f6678b");
+      },
+      data:{ text: "Test data from chat app"},
+      dataType:"json"
+    }).done(function(data){
+        newMessage(text);
+    });
+
+
+
+
+    
 }
 
 var subscribe = function() {
