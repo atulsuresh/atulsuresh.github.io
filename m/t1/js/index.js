@@ -1,9 +1,10 @@
 var getRandomInt = function(min, max) {return Math.floor(Math.random() * (max - min + 1)) + min;}
 var getRandomFloat = function(min, max) {return (Math.random() * (min - max) + max).toFixed(2);}
-
+var postToken = "";
 // Centrifugo instance address
 var url = "https://damp-wildwood-28280.herokuapp.com/connection";
-
+var channelname = '1';
+var apiUrl = "http://139.59.20.140/api/"
 // project secret, note that you MUST NEVER reveal project secret key in production
 // this is just a pure javascript demo where we generate connection token on client 
 // side
@@ -292,21 +293,31 @@ var postMessage = function() {
     if (text.length === 0) {
       return;
     }
+
+    msgdata = {
+              isCard: false,
+              text: text 
+    };
+
+
     data = {
       "nick": "anonymous",
-      "input": text
+      "text": JSON.stringify(msgdata),
+      "textname": "hello"
     }
-    //subscription.publish(data);
+
+
+    //subscription.publish(data);http://139.59.20.140/api/company/
 
     $.ajax({
-      url:"http://frizzon.herokuapp.com/api/trip/16/",
+      url:apiUrl+"trip/"+channelname+"/",
       type:"POST",
       beforeSend: function(xhr){
-                xhr.setRequestHeader("Content-Type","application/json");
-                xhr.setRequestHeader("Authorization","Token 8529bbbc483668b2c164cc66d18d7d9d08f6678b");
+                
+                xhr.setRequestHeader("Authorization","Token "+postToken);
       },
-      data:{ text: "Test data from chat app"},
-      
+      data: $.param(data),
+
     }).done(function(data){
         newMessage(text);
     });
@@ -318,8 +329,35 @@ var postMessage = function() {
 }
 
 var subscribe = function() {
-    var channelname = 'akanathul';
-    subscription = centrifuge.subscribe('akanathul', function(message) {
+
+
+
+    var logindata= { username: 'aaa@gmail.com', password: '123456' };
+
+
+
+    $.ajax({
+      url:apiUrl+"login/",
+      type:"POST",
+      beforeSend: function(xhr){
+                
+                xhr.setRequestHeader("Authorization","Token 5f8ac7e04ec205b2cb9440e437561142a2e3a7c3");
+      },
+      data: $.param(logindata),
+
+    }).done(function(data){
+        console.log(data);
+        postToken = data.token
+    });
+
+
+
+
+
+
+
+    
+    subscription = centrifuge.subscribe(channelname, function(message) {
         if (message.data && centrifuge.getClientId() !== message["client"]) {
             receiveMessage(message.data["input"]);
         }
